@@ -1,4 +1,6 @@
-﻿namespace SquareLib
+﻿using System.Formats.Asn1;
+
+namespace SquareLib
 {
     public class Triangle : Figure
     {
@@ -64,12 +66,36 @@
             {
                 throw new ArgumentException("Impossible values");
             }
-        } 
+        }
+
+        private double isRight()
+        {
+            double tempSide1, tempSide2, tempSide3;
+            tempSide1 = Math.Max(side1, Math.Max(side2, side3));
+            tempSide3 = Math.Min(side1, Math.Min(side2, side3));
+            tempSide2 = side1 + side2 + side3 - tempSide1 - tempSide3;
+
+            if(Math.Pow(tempSide1, 2) == Math.Pow(tempSide2, 2) + Math.Pow(tempSide3, 2))
+            {
+                return (tempSide2 * tempSide3) / 2;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
 
         public override double calcSquare()
         {
+            double area;
+            if ((area = isRight()) != 0)
+            {
+                return area;
+            }
             double p = (side1 + side2 + side3) / 2;
-            return Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
+            area = Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
+            return area;
         }
     }
 }
