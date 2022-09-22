@@ -23,7 +23,7 @@
 
         public Circle(double _radius) : this()
         {
-            if(radius < 0)
+            if(_radius < 0)
             {
                 throw new ArgumentException("Should not negative value");
             }
