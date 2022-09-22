@@ -11,11 +11,11 @@ namespace SquareLib
             get => side1;
             set
             {
-                if(value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Should not negative value");
                 }
-                else if ((side2 + value) > side3 && (value + side3) > side2 && (side2 + side3) > value)
+                else if (!((side2 + value) > side3 && (value + side3) > side2 && (side2 + side3) > value))
                 {
                     throw new ArgumentException("Impossible values");
                 }
@@ -28,10 +28,10 @@ namespace SquareLib
             get => side2;
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Should not negative value");
-                }else if((side1 + value) > side3 && (value + side3) > side1 && (side1 + side3) > value)
+                }else if (!((side1 + value) > side3 && (value + side3) > side1 && (side1 + side3) > value))
                 {
                     throw new ArgumentException("Impossible values");
                 }
@@ -44,11 +44,11 @@ namespace SquareLib
             get => side3;
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Should not negative value");
                 }
-                else if ((side1 + value) > side2 && (value + side2) > side1 && (side1 + side2) > value)
+                else if (!((side1 + value) > side2 && (value + side2) > side1 && (side1 + side2) > value))
                 {
                     throw new ArgumentException("Impossible values");
                 }
