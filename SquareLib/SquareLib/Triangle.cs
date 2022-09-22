@@ -1,6 +1,6 @@
 ﻿namespace SquareLib
 {
-    internal class Triangle : Figure
+    public class Triangle : Figure
     {
         private double side1, side2, side3;
         
