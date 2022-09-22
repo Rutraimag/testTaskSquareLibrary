@@ -1,6 +1,6 @@
-/*Допустим есть 2 таблицы. Products и Categories. 
-В таблице Products: Id, name. 
-В таблице Categories: Id, name, productId*/
+/*Р”РѕРїСѓСЃС‚РёРј РµСЃС‚СЊ 2 С‚Р°Р±Р»РёС†С‹. Products Рё Categories. 
+Р’ С‚Р°Р±Р»РёС†Рµ Products: Id, name. 
+Р’ С‚Р°Р±Р»РёС†Рµ Categories: Id, name, productId*/
 SELECT Products.name, Categories.name 
 FROM Products LEFT JOIN Categories
 ON Products.Id = Categories.productId;
